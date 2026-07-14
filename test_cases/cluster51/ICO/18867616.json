@@ -1,0 +1,197 @@
+{
+    "testcase_id": "18867616",
+    "anforderungs_id_version": 0,
+    "revision": 508,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202289, 16072745",
+    "component": "ICO",
+    "testcase_name": "[ICO][C][GM]LocalSettings36ClickYesAtUnlinkAccountErrorScreen",
+    "testcase_description": "Scenario: Display error toast\r\nGiven account unlinking request has been sent\r\nAnd ICO_LOADING is displayed\r\nWhen account linking HTTP response code is != 204\r\nThen display ICO_SETTINGS_EDIT_ACCOUNT screen\r\nAnd display ICO_ERROR_UNLINKING_TOAST on top of I",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "CHECK_APN1",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CHECK_APN2",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "SET_SYSTEM_WLAN_STATE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.phone.SetSystemWifiState",
+            "values": {
+                "STATE": false
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CHECK_LICENSE_IN_SERVICE_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckLicenseInServiceList",
+            "values": {
+                "SERVICE_ID": "ico_v1",
+                "STATE": true
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_USER_MODE_IN_ICO",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {
+                "MODE": "CLOUD_MODE"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_ICO_EMAIL_ACCOUNT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.in_car_office.CheckIcoSettingsEmailAccount",
+            "values": {
+                "ACCOUNT": "GMAIL"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": false
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e485_in_car_office_ag"
+            }
+        },
+        {
+            "step": "10.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Audi In Car Office.ico_error_privacy_screen__dismiss_button__label",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "11.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "in_car_office.settings_edit_account"
+            }
+        },
+        {
+            "step": "12.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Audi In Car Office.ico_settings_screen__unlink_account__text",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "LABEL": "VTM.Audi In Car Office.ico_settings_screen__unlink_account__dialog_positive_btn",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_TOAST_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckToastIsVisible",
+            "values": {
+                "TEXT": "VTM.Audi In Car Office.ico_settings_screen__unlink_account__error_message",
+                "LANG": "en_GB",
+                "LABEL_SOURCE": "AudiApps"
+            }
+        },
+        {
+            "step": "1.1",
+            "name": "CHECK_ICO_EMAIL_ACCOUNT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.in_car_office.CheckIcoSettingsEmailAccount",
+            "values": {
+                "ACCOUNT": "GMAIL"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_SYSTEM_WLAN_STATE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.phone.SetSystemWifiState",
+            "values": {
+                "STATE": true
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-10-16T13:13:57.155000Z",
+    "tags": "KWD_partly",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

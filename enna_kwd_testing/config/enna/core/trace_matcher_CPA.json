@@ -1,0 +1,10 @@
+{
+	"Audio_peaks": {
+		"type": "RegEx",
+		"searchPattern": "-\\[srcMics\\] Audio peaks  \\[(?P<value_1>[0-9]*)\\] \\[[0-9]*\\] \\[(?P<value_3>[0-9]*)\\] \\[[0-9]*\\]"
+	},
+	"A2B_Endsniff_Bit_OK": {
+		"type": "String",
+		"searchPattern": "CPV:SH A2B Write Master reg 0x11= 0x23 was OK"
+	}
+}

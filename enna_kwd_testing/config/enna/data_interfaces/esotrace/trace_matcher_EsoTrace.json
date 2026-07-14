@@ -1,0 +1,26 @@
+{
+  "APN1_STATE": {
+	  	"regex": ".*onlineState: (?P<state>UNKNOWN|BLOCKED|CONNECTED).*"
+	},
+	"APN2_STATE": {
+		"regex": ".*onlineStateForAPN2: (?P<state>UNKNOWN|BLOCKED|CONNECTED).*"
+	},
+	"HOTSPOTWLAN_V1": {
+		"regex": ".*updateDisableReasons\\W+: hotspotwlan_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	},
+	"DATAPLAN_V1": {
+		"regex": ".*updateDisableReasons\\W+: datplan_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	},
+	"ICO_V1": {
+		"regex": ".*updateDisableReasons\\W+: ico_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	},
+	"IGNITESTORE_V1": {
+		"regex": ".*updateDisableReasons\\W+: ignitestore_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	},
+	"OBB_V1": {
+		"regex": ".*updateDisableReasons\\W+: obb_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	},
+	"OLB_V1": {
+		"regex": ".*updateDisableReasons\\W+: olb_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	}
+}

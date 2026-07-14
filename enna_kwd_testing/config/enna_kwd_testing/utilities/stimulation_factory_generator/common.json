@@ -1,0 +1,14 @@
+{
+  "tests": {
+    "test_sequence_input_path": "test_input"
+  },
+  "dependency_factory": {
+    "dependency_factory_output_path": "enna_kwd_testing/factories/generated_dependency_factory.py",
+    "dependency_factory_template_path": "enna_kwd_testing/utilities/stimulation_factory_generator/templates/template.jinja",
+    "dependency_factory_class_name": "DependencyFactory"
+  },
+  "testcase_factory": {
+    "testcase_factory_full_qualified_module_name": "enna_kwd_testing.factories.testcasefactory",
+    "testcase_factory_class_name": "TestcaseFactory"
+  }
+}

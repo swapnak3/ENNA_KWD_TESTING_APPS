@@ -1,0 +1,9 @@
+{
+	"default": {
+		"implementation": "server_uiautomator2",
+		"device_name": "emulator-5554",
+		"device_address": "192.168.250.248",
+		"ssh_port_mapping": {"5037": "127.0.0.1:5037", "27183": "127.0.0.1:27183"},
+		"adb_instance_name": "HCP3"
+	}
+}

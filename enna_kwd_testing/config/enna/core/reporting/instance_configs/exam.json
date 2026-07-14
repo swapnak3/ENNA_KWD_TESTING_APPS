@@ -1,0 +1,12 @@
+{
+	"default": {
+		"implementation": "server_exam",
+		"reporting_service_address": "http://audiinsa3556.in.audi.vwg:50180",
+		"project_name": "ENNA",
+		"user": "usr",
+		"password": "pwd",
+		"exam_wait_time_start": 15,
+		"exam_exe": "path_to_exam_exe",
+		"appended_module_versions_filter": [".*"]
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"default": {
+		"implementation": "server_multiple",
+		"reporting_services": ["multiple_junit", "multiple_nunit"]
+	},
+	"multiple_junit": {
+		"implementation": "server_junit"
+	},
+	"multiple_nunit": {
+		"implementation": "server_nunit",
+		"user": "TBD@audi.de"
+	}
+}

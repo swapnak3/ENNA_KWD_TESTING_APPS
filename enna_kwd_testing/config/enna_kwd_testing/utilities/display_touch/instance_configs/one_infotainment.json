@@ -1,0 +1,6 @@
+{
+  "center":{
+		"implementation": "server_python_can",
+        "infotainment_system": "one_infotainment"
+	}
+}

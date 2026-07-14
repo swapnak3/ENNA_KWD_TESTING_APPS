@@ -1,0 +1,15 @@
+{
+	"odis": {
+		"implementation": "server_odis",
+		"odis_path": "C:\\Program Files\\OE\\OffboardDiagLauncher.exe",
+		"engine_log_path": "C:\\ProgramData\\OE\\log\\engine.log",
+		"odis_args": [
+			"-configuration",
+			"configuration/webservice.ini"
+		],
+		"wsdl_file": "http://localhost:8081/OdisAutomationService?wsdl",
+		"odis_wait_start": 60,
+		"odis_project": "AU38X-PA",
+		"connection_protocol": "CAN"
+	}
+}

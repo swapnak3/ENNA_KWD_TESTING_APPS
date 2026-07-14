@@ -1,0 +1,103 @@
+{
+    "testcase_id": "21033475",
+    "anforderungs_id_version": 0,
+    "revision": 424,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202125, 18120057, AHCP3-91841",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] LocalSettingsButtonIsAvailableOnEveryScreen 01(can be accessed from anywhere inside the app)",
+    "testcase_description": "no description\r\nInputs:\r\nn/a\r\n(A2) click back button, then click privacy note\r\n(E2)- settings button in the title line in the top right corner is shown",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.about_us"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "BACK_BUTTON"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.data_protection_notes"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "SETTINGS_BUTTON"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "FUNCTION_CALL",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.function_call.FunctionCall",
+            "values": {
+                "TEXT": "keine Postcondition notwendig"
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-08-19T15:17:59.018000Z",
+    "tags": "KWD_complete; TCforCID; AutomationDone; Regression DET1",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

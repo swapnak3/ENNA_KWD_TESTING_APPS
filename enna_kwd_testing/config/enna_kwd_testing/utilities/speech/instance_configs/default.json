@@ -1,0 +1,15 @@
+{
+  "default": {
+    "language": "de_DE",
+    "implementation": "server_google",
+    "output": {
+      "speaker": "Lautsprecher (USB Audio Device)",
+      "volume": 100,
+      "rate": 0
+    },"input": {
+      "microphone": "Mikrofon (USB Audio Device)",
+      "phrase_time_limit": 10.0,
+      "sample_rate": 44100
+    }
+  }
+}

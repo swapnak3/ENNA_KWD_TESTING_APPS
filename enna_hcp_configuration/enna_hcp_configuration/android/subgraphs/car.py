@@ -1,0 +1,213 @@
+# -*- coding: utf-8 -*-
+"""Module contains transitions for a sub graph of the android HMI."""
+
+from enna_hcp_configuration.android.base import HMIActionType
+from enna_hcp_configuration.android.contexts import car as contexts_car
+from enna_hcp_configuration.android.contexts import launcher as contexts_launcher
+from enna_hcp_configuration.android.contexts import settings as contexts_settings
+from enna_hcp_configuration.android.xpaths import car as xpaths_car
+from enna_hcp_configuration.android.xpaths import launcher as xpaths_launcher
+
+
+def initialize(graph):  # pylint: disable=too-many-statements # noqa
+	"""Initialize the sub graph in this module by adding transitions to the main graph.
+
+	:param enna_hcp_configuration.bases.Graph graph: the main graph which should be extended
+	"""
+	graph.add_transition(contexts_car.DISPLAY, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.LIGHTS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LIGHTS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.SEATS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SEATS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.DOORS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DOORS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.SERVICING, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SERVICING_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.MORE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.MORE_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.DISPLAY_SETTINGS_CID, (HMIActionType.click_element, [xpaths_car.CID_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY_SETTINGS_CID, contexts_car.DISPLAY, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.DISPLAY_SETTINGS_HUD, (HMIActionType.click_element, [xpaths_car.HUD_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY_SETTINGS_HUD, contexts_car.DISPLAY, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.DISPLAY_SETTINGS_FID, (HMIActionType.click_element, [xpaths_car.FID_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY_SETTINGS_FID, contexts_car.DISPLAY, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.DISPLAY_SETTINGS_PID, (HMIActionType.click_element, [xpaths_car.PID_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY_SETTINGS_PID, contexts_car.DISPLAY, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY, contexts_car.DISPLAY_SETTINGS_VA, (HMIActionType.click_element, [xpaths_car.VA_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.DISPLAY_SETTINGS_VA, contexts_car.DISPLAY, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.LIGHTS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LIGHTS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.SEATS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SEATS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.DOORS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DOORS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.SERVICING, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SERVICING_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.MORE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.MORE_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.AUDI_DRIVE_SELECT_SETTINGS, (HMIActionType.click_element, [xpaths_car.DRIVE_SELECT_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT_SETTINGS, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT_SETTINGS, contexts_car.AUDI_DRIVE_SELECT_SETTINGS_POPUP_CURVE, (HMIActionType.click_element, [xpaths_car.DRIVE_SELECT_CURVE_CONTROL_INFO_BUTTON]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT_SETTINGS_POPUP_CURVE, contexts_car.AUDI_DRIVE_SELECT_SETTINGS, (HMIActionType.click_element, [xpaths_car.POPUP_CLOSE_BUTTON]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT_SETTINGS, contexts_car.AUDI_DRIVE_SELECT_SETTINGS_POPUP_PITCH, (HMIActionType.click_element, [xpaths_car.DRIVE_SELECT_PITCH_CONTROL_INFO_BUTTON]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT_SETTINGS_POPUP_PITCH, contexts_car.AUDI_DRIVE_SELECT_SETTINGS, (HMIActionType.click_element, [xpaths_car.POPUP_CLOSE_BUTTON]))
+
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT, contexts_car.AUDI_DRIVE_SELECT_INDIVIDUAL_SETTINGS, (HMIActionType.click_element, [xpaths_car.DRIVE_SELECT_INDIVIDUAL_SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.AUDI_DRIVE_SELECT_INDIVIDUAL_SETTINGS, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.DISPLAY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DISPLAYS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.SEATS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SEATS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.DOORS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DOORS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.SERVICING, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SERVICING_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.MORE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.MORE_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.LIGHTS_INTERIOR, (HMIActionType.click_element, [xpaths_car.LIGHTS_INTERIOR_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_INTERIOR, contexts_car.LIGHTS, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS, contexts_car.LIGHTS_EXTERIOR, (HMIActionType.click_element, [xpaths_car.LIGHTS_EXTERIOR_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_EXTERIOR, contexts_car.LIGHTS, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_EXTERIOR, contexts_car.LIGHTS_EXTERIOR_SETTINGS, (HMIActionType.click_element, [xpaths_car.SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_EXTERIOR_SETTINGS, contexts_car.LIGHTS_EXTERIOR, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_INTERIOR, contexts_car.LIGHTS_INTERIOR_SETTINGS, (HMIActionType.click_element, [xpaths_car.SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_EXTERIOR, contexts_car.LIGHTS_COMING_LEAVING_HOME, (HMIActionType.click_element, [xpaths_car.LIGHTS_COMING_LEAVING_HOME_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_COMING_LEAVING_HOME, contexts_car.LIGHTS_EXTERIOR, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_EXTERIOR, contexts_car.LIGHTS_DIGITAL_SIGNATURES, (HMIActionType.click_element, [xpaths_car.LIGHTS_DIGITAL_SIGNATURES_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_DIGITAL_SIGNATURES, contexts_car.LIGHTS_EXTERIOR, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.LIGHTS_INTERIOR, contexts_car.LIGHTS_INTERIOR_SETTINGS_POPUP_LINK_COLORS, (HMIActionType.click_element, [xpaths_car.LIGHTS_INTERIOR_DISPLAY_COLOR_INFO_BUTTON]))
+	graph.add_transition(contexts_car.LIGHTS_INTERIOR_SETTINGS_POPUP_LINK_COLORS, contexts_car.LIGHTS_INTERIOR, (HMIActionType.click_element, [xpaths_car.POPUP_CLOSE_BUTTON]))
+
+	graph.add_transition(contexts_car.SEATS, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.DISPLAY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DISPLAYS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.LIGHTS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LIGHTS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.DOORS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DOORS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.SERVICING, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SERVICING_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.MORE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.MORE_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SEATS, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.SEATS_MASSAGE, (HMIActionType.click_element, [xpaths_car.SEATS_MASSAGE_BUTTON]))
+	graph.add_transition(contexts_car.SEATS_MASSAGE, contexts_car.SEATS, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.SEATS_ADJUSTMENT, (HMIActionType.click_element, [xpaths_car.SEATS_ADJUSTMENT_BUTTON]))
+	graph.add_transition(contexts_car.SEATS_ADJUSTMENT, contexts_car.SEATS, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.SEATS, contexts_car.SEATS_POSITION, (HMIActionType.click_element, [xpaths_car.SEATS_POSITION_BUTTON]))
+	graph.add_transition(contexts_car.SEATS_POSITION, contexts_car.SEATS, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.SEATS_MASSAGE, contexts_car.SEATS_SETTINGS, (HMIActionType.click_element, [xpaths_car.SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.SEATS_SETTINGS, contexts_car.SEATS_MASSAGE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.DOORS, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DOORS, contexts_car.DISPLAY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DISPLAYS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DOORS, contexts_car.LIGHTS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LIGHTS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DOORS, contexts_car.SEATS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SEATS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DOORS, contexts_car.SERVICING, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SERVICING_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DOORS, contexts_car.MORE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.MORE_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DOORS, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DOORS, contexts_car.DOORS_SETTINGS, (HMIActionType.click_element, [xpaths_car.SETTINGS_BUTTON]))
+	graph.add_transition(contexts_car.DOORS_SETTINGS, contexts_car.DOORS, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.SERVICING, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.DISPLAY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DISPLAYS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.LIGHTS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LIGHTS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.SEATS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SEATS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.DOORS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DOORS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.MORE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.MORE_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.SERVICING_VEHICLE_STATUS, (HMIActionType.click_element, [xpaths_car.SERVICING_VEHICLE_ALLREPORTS_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_VEHICLE_STATUS, contexts_car.SERVICING, (HMIActionType.click_element, [xpaths_car.SERVICING_VEHICLE_STATUS_BACK_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.SERVICING_VEHICLE_DATA, (HMIActionType.click_element, [xpaths_car.SERVICING_VEHICLE_DATA_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_VEHICLE_DATA, contexts_car.SERVICING, (HMIActionType.click_element, [xpaths_car.SERVICING_VEHICLE_DATA_BACK_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.SERVICING_RDK_SAVE, (HMIActionType.click_element, [xpaths_car.SERVICING_RDK_SAVE_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING, contexts_car.SERVICING_OIL, (HMIActionType.click_element, [xpaths_car.OIL_SERVICE_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_OIL, contexts_car.SERVICING, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.SERVICING_RDK_SAVE, contexts_car.SERVICING, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_RDK_SAVE, contexts_car.SERVICING_RDK_SAVE_CONFIRM, (HMIActionType.click_element, [xpaths_car.SERVICING_TIRE_PRESSURE_SAVE_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_RDK_SAVE_CONFIRM, contexts_car.SERVICING, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_RDK_SAVE_CONFIRM, contexts_car.SERVICING_RDK_SAVE_CONFIRM_LOADING, (HMIActionType.click_element, [xpaths_car.SERVICING_TIRE_PRESSURE_CONFIRM_BUTTON]))
+	graph.add_transition(contexts_car.SERVICING_RDK_SAVE_CONFIRM_LOADING, contexts_car.SERVICING, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.SERVICING, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+
+	graph.add_transition(contexts_car.MORE, contexts_car.AUDI_DRIVE_SELECT, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.AUDI_DRIVE_SELECT_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.MORE, contexts_car.DISPLAY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DISPLAYS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.MORE, contexts_car.LIGHTS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LIGHTS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.MORE, contexts_car.SEATS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SEATS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.MORE, contexts_car.DOORS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DOORS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.MORE, contexts_car.SERVICING, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.SERVICING_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.MORE, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_ZV, (HMIActionType.click_element_in_list, [xpaths_car.MORE_ZV_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_ZV, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_TILT_ANGEL, (HMIActionType.click_element_in_list, [xpaths_car.MORE_TILT_ANGLE_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_TILT_ANGEL, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_VIN, (HMIActionType.click_element_in_list, [xpaths_car.MORE_VIN_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_VIN, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_JOKERKEY, (HMIActionType.click_element_in_list, [xpaths_car.MORE_JOKERKEY_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_JOKERKEY, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_UGDO, (HMIActionType.click_element_in_list, [xpaths_car.MORE_UGDO_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_UGDO, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_BRAKE, (HMIActionType.click_element_in_list, [xpaths_car.MORE_BRAKE_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_BRAKE, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_WIPER, (HMIActionType.click_element_in_list, [xpaths_car.MORE_WIPER_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_WIPER, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_DRIVING_SCHOOL, (HMIActionType.click_element_in_list, [xpaths_car.MORE_DRIVING_SCHOOL_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_DRIVING_SCHOOL, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_DATA_MANAGEMENT, (HMIActionType.click_element_in_list, [xpaths_car.MORE_DATA_MANAGEMENT_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_DATA_MANAGEMENT, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_OSD, (HMIActionType.click_element_in_list, [xpaths_car.MORE_OSD_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_OSD, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE, contexts_car.MORE_CPD, (HMIActionType.click_element_in_list, [xpaths_car.MORE_CPD_TWO_ENTRY_BUTTON, xpaths_car.MAIN_LIST]))
+	graph.add_transition(contexts_car.MORE_CPD, contexts_car.MORE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE_DATA_MANAGEMENT, contexts_car.MORE_DPN_DISCLAIMER, (HMIActionType.click_element, [xpaths_car.MORE_DPN_DISCLAIMER_BUTTON]))
+	graph.add_transition(contexts_car.MORE_DPN_DISCLAIMER, contexts_car.MORE_DATA_MANAGEMENT, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE_BRAKE, contexts_car.MORE_ROLLING_ABILITY, (HMIActionType.click_element, [xpaths_car.MORE_ROLLING_ABILITY_BUTTON]))
+	graph.add_transition(contexts_car.MORE_ROLLING_ABILITY, contexts_car.MORE_BRAKE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.MORE_BRAKE, contexts_car.MORE_EPB, (HMIActionType.click_element, [xpaths_car.MORE_EPB_BUTTON]))
+	graph.add_transition(contexts_car.MORE_EPB, contexts_car.MORE_BRAKE, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.ENERGY, contexts_car.DEPARTURE_TIMES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DEPARTURE_TIMES_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.ENERGY, contexts_car.LOCATIONS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LOCATIONS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.ENERGY, contexts_car.TIPPS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.TIPPS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.ENERGY, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+
+	graph.add_transition(contexts_car.DEPARTURE_TIMES, contexts_car.ENERGY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.ENERGY_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DEPARTURE_TIMES, contexts_car.LOCATIONS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LOCATIONS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DEPARTURE_TIMES, contexts_car.TIPPS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.TIPPS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.DEPARTURE_TIMES, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+
+	graph.add_transition(contexts_car.LOCATIONS, contexts_car.ENERGY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.ENERGY_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LOCATIONS, contexts_car.DEPARTURE_TIMES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DEPARTURE_TIMES_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LOCATIONS, contexts_car.TIPPS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.TIPPS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.LOCATIONS, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+
+	graph.add_transition(contexts_car.TIPPS, contexts_car.ENERGY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.ENERGY_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.TIPPS, contexts_car.DEPARTURE_TIMES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DEPARTURE_TIMES_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.TIPPS, contexts_car.LOCATIONS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.LOCATIONS_BUTTON, xpaths_car.LIST]))
+	graph.add_transition(contexts_car.TIPPS, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+
+	graph.add_transition(contexts_car.TIPPS, contexts_car.ENERGY_TIPPS_PERFORMANCE_BATTERY_LEVEL, (HMIActionType.click_element, [xpaths_car.ENERGY_TIPPS_PERFORMANCE_BUTTON]))
+	graph.add_transition(contexts_car.ENERGY_TIPPS_PERFORMANCE_BATTERY_LEVEL, contexts_car.TIPPS, (HMIActionType.click_element, [xpaths_car.POPUP_CLOSE_BUTTON]))
+
+	# driver_assistance
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_WARNINGS, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_LANE, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_SPEED, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_BRAKE, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_EFFICIENCY, contexts_launcher.APP_LIST, (HMIActionType.click_element, [xpaths_launcher.APP_LIST_BUTTON]))
+
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_car.DRIVER_ASSISTANCE_WARNINGS, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_WARNINGS_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_car.DRIVER_ASSISTANCE_LANE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_LANE_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_car.DRIVER_ASSISTANCE_SPEED, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_SPEED_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_car.DRIVER_ASSISTANCE_BRAKE, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_BRAKE_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_car.DRIVER_ASSISTANCE_EFFICIENCY, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_EFFICIENCY_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_FAVORITES, contexts_car.DRIVER_ASSISTANCE_SETTINGS, (HMIActionType.click_element, [xpaths_car.DRIVER_ASSISTANCE_SETTINGS_BUTTON]))
+
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_WARNINGS, contexts_car.DRIVER_ASSISTANCE_FAVORITES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_FAVORITES_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_LANE, contexts_car.DRIVER_ASSISTANCE_FAVORITES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_FAVORITES_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_SPEED, contexts_car.DRIVER_ASSISTANCE_FAVORITES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_FAVORITES_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_BRAKE, contexts_car.DRIVER_ASSISTANCE_FAVORITES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_FAVORITES_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_EFFICIENCY, contexts_car.DRIVER_ASSISTANCE_FAVORITES, (HMIActionType.click_element_in_horizontal_list, [xpaths_car.DRIVER_ASSISTANCE_FAVORITES_BUTTON, xpaths_car.DRIVER_ASSISTANCE_LIST]))
+	graph.add_transition(contexts_car.DRIVER_ASSISTANCE_SETTINGS, contexts_car.DRIVER_ASSISTANCE_FAVORITES, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME, contexts_settings.SYSTEM, (HMIActionType.click_element, [xpaths_car.BACK_BUTTON]))
+	graph.add_transition(contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME, contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME_MANUALLY, (HMIActionType.click_element_in_list,
+	                                                                                                                       [xpaths_car.SETTINGS_SYSTEM_DATE_AND_TIME_MANUALLY_BUTTON, xpaths_car.SETTINGS_SYSTEM_LIST_CONTAINER]))
+	graph.add_transition(contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME_MANUALLY, contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME, (HMIActionType.click_element, [xpaths_car.SETTINGS_SYSTEM_DATE_AND_TIME_MANUALLY_BACK_BUTTON]))
+	graph.add_transition(contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME, contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME_TIMEZONE, (HMIActionType.click_element_in_list,
+	                                                                                                                       [xpaths_car.SETTINGS_SYSTEM_DATE_AND_TIME_TIMEZONE_BUTTON, xpaths_car.SETTINGS_SYSTEM_LIST_CONTAINER]))
+	graph.add_transition(contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME_TIMEZONE, contexts_car.SETTINGS_SYSTEM_DATE_AND_TIME, (HMIActionType.click_element, [xpaths_car.SETTINGS_SYSTEM_DATE_AND_TIME_TIMEZONE_BACK_BUTTON]))
+
+	graph.add_transition(contexts_car.SETTINGS_SYSTEM_UNITS, contexts_settings.SYSTEM, (HMIActionType.click_element, [xpaths_car.SETTINGS_SYSTEM_UNITS_BACK_BUTTON]))

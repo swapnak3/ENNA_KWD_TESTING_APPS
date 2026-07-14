@@ -1,0 +1,148 @@
+{
+    "testcase_id": "25342845",
+    "anforderungs_id_version": 0,
+    "revision": 373,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202277, 18126771, AHCP3-92387",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] ShowLoadingScreenWhenDisclaimerOpenedViaAnotherAppResumeBehaviour",
+    "testcase_description": "Test Steps:\r\n1. open any other app than Legal (Radio)\r\n2. Open Settings. scroll to Haftungsausschluss and click it\r\n-> Expected Result: LEGAL_FALLBACK_QR_CODE is shown\r\n3. Click to AppGrid\r\n4. Open LEGAL App\r\n-> expected Result:\r\n LEGAL_FALLBACK_QR_CODE i",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CLEAR_STORAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.adb.general.ClearCacheStorage",
+            "values": {
+                "APP_NAME": "LEGAL"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "radio.settings"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "WAIT_TIME_IN_MS",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs",
+            "values": {
+                "TIME": 5000
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "LABEL": "de.eso.radio.bl.radio_settings_disclaimer_of_liabliltiy"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.qr_code"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e4d9_legal_ag"
+            }
+        },
+        {
+            "step": "10.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.qr_code"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "BACK_BUTTON"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-11-17T15:16:04.977000Z",
+    "tags": "KWD_complete; TCforCID; AutomationBlocked",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

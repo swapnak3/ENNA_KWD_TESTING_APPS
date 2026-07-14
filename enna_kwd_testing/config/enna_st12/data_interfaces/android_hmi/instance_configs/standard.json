@@ -1,0 +1,20 @@
+{
+	"center": {
+		"implementation": "server_uiautomator2",
+		"device_name": "172.16.250.248:5555",
+		"device_address": "172.16.250.248",
+		"device_port": "5555",
+		"adb_instance_name": "HCP3",
+		"scroll_duration": 0.3,
+		"scroll_scale": 0.5
+	},
+	"passenger": {
+		"implementation": "server_uiautomator2",
+		"device_name": "172.16.250.248:5555",
+		"device_address": "172.16.250.248",
+		"device_port": "5555",
+		"adb_instance_name": "HCP3",
+		"scroll_duration": 0.3,
+		"scroll_scale": 0.5
+	}
+}

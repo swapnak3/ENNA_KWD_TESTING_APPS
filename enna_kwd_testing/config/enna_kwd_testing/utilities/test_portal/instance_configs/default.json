@@ -1,0 +1,9 @@
+{
+  "default": {
+    "implementation": "server_test_portal",
+    "user": "approved.tester.mbbtp.17",
+    "password": "62a123b37ba9403a5a5d3235dd6853e5",
+    "vin": "BAUNEEGFZ21050455",
+    "vehicle": "28691946"
+  }
+}

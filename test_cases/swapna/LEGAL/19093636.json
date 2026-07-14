@@ -1,0 +1,129 @@
+{
+    "testcase_id": "19093636",
+    "anforderungs_id_version": 0,
+    "revision": 558,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "18130845, 14202271, AHCP3-100756",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] DisplayLegalBlockingToastImprint",
+    "testcase_description": "Scenario: SET_UP_MOBILE_DATA (STATE: ON)\r\nCHECK_APN1 (STATE: CONNECTED)\r\nSET_DRIVE_MODE (GEAR: P, SPEED_IN_M_PER_S: 0)\r\n",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "DRIVE",
+                "SPEED_IN_M_PER_S": 30.0
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e4d9_legal_ag"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e4d9_legal_ag"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.overview"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "About us"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_TOAST_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckToastIsVisible",
+            "values": {
+                "TEXT": "VTM.Legal.legal_blocking_toast__content__text",
+                "LANG": "en_GB",
+                "LABEL_SOURCE": "AudiApps"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "PARKING",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2026-03-09T13:14:00.087000Z",
+    "tags": "KWD_complete",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}
+

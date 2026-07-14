@@ -1,0 +1,152 @@
+{
+    "testcase_id": "10056554",
+    "anforderungs_id_version": 0,
+    "revision": 556,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202131, 18120030, AHCP3-84661",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] ShowLegalTextsInOffline (active privacy mode) and online mode (deactivated privacy mode)1",
+    "testcase_description": "-",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.about_us"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "XPATH_NAME": "launcher.APP_GRID_BUTTON"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": false
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "WAIT_TIME_IN_MS",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs",
+            "values": {
+                "TIME": 3000
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "XPATH_NAME": "launcher.APP_GRID_BUTTON"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e4d9_legal_ag"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "WAIT_TIME_IN_MS",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs",
+            "values": {
+                "TIME": 3000
+            }
+        },
+        {
+            "step": "10.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.privacy_mode_info",
+                "TIMEOUT": 4.0
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "OK"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.about_us",
+                "TIMEOUT": 4.0
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": true
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-11-24T09:43:04.652000Z",
+    "tags": "KWD_complete; TCforCID; TCforCID",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

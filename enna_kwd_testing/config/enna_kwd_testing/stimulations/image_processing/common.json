@@ -1,0 +1,23 @@
+{
+  "center": {
+    "home_button": [140, 144, 259, 263],
+    "-9": [259, 144, 378, 263],
+    "first_favorite_button": [140,263, 259,382],
+    "second_favorite_button": [259,263, 378,382],
+    "third_favorite_button": [140,382, 259,501],
+    "fourth_favorite_button": [259,382, 378,501],
+    "fifth_favorite_button": [140,501, 259,620],
+    "sixth_favorite_button": [259,501, 378,620],
+    "list_item_data_plan_info_button": [],
+    "top_right": [1320, 119, 2220, 467],
+    "bottom_right": [1320, 467, 2220, 816],
+    "top_left": [420, 119, 1320, 467],
+    "bottom_left": [420, 467, 1320, 816],
+    "headline": [420, 0, 2220, 119],
+    "top_right_corner": [2089, 0, 2220, 119],
+    "top_left_corner": [420, 0, 551, 119]
+  },
+  "passenger": {
+    "home_button": [0, 0, 119, 119]
+  }
+}

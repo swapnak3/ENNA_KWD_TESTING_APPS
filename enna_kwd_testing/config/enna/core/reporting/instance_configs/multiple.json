@@ -1,0 +1,26 @@
+{
+    "default": {
+        "implementation": "server_multiple",
+        "reporting_services": ["multiple_junit", "multiple_nunit", "multiple_pickle"]
+    },
+    "multiple_junit": {
+        "implementation": "server_junit",
+        "log_level": "WARNING"
+    },
+    "multiple_nunit": {
+        "implementation": "server_nunit",
+        "user": "user@domain.de",
+        "log_level": "WARNING"
+    },
+    "multiple_pickle": {
+        "implementation": "server_pickle",
+        "exporters": [
+            {
+                "class_name": "enna.core.reporting.exporters.html_exporter.HTMLExporter",
+                "settings": {
+                    "template": "template_enna"
+                }
+            }
+        ]
+    }
+}

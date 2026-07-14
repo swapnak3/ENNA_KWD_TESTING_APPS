@@ -1,0 +1,14 @@
+{
+	"center": {
+		"implementation": "server_android",
+		"shorten_path_via_applist": false,
+		"sleep_between_actions": 0.7,
+		"transition_timeout": 5
+	},
+	"passenger": {
+		"implementation": "server_android",
+		"shorten_path_via_applist": false,
+		"sleep_between_actions": 0.7,
+		"transition_timeout": 5
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"RADIO_STATION_LIST": {
+		"type": "RegEx",
+		"searchPattern": ".*:\/\/(?P<source>.*).*\/(?P<mediaId>.*), title=*(?P<title>.*), frequencyKHz=*(?P<frequency>.*), lastActiveList=(?P<lastActiveList>.*), active=(?P<active>.*), isFavorite=(?P<favorite>.*), physicalBand=(?P<physicalBand>.*), listType=(?P<listType>.*), ptyText=(?P<ptyText>.*), signalState=(?P<signalState>.*), hybridAvailable=(?P<hybridAvailable>.*), stationLogo=(?P<stationLogo>.*)"
+	},
+	"RADIO_PARENT_LIST": {
+		"type": "RegEx",
+		"searchPattern": ".*parentId=esoradio:.*\/(?P<source>.*), children=(?P<count>.*)x"
+	},
+	"APP_FORCE_STOP": {
+		"type": "RegEx",
+		"searchPattern": ".*Force stopping com.valtech_mobility.(?P<app>.*).audi"
+	},
+	"TOAST_APPEARED": {
+		"type": "RegEx",
+		"searchPattern": ".*UIAutomatorStub: Toast:(?P<toast_text>.*) Pkg:"
+	},
+	"APN1_CONNECTION_STATE": {
+		"type": "RegEx",
+		"searchPattern": ".*onlineState: (?P<state>.*)"
+	},
+	"APN2_CONNECTION_STATE": {
+		"type": "RegEx",
+		"searchPattern": ".*onlineStateForAPN2: (?P<state>.*)"
+	},
+	"ACTIVE_TILES": {
+		"type": "RegEx",
+		"searchPattern": ".*activeTiles (?P<active_tiles>.*)\\)"
+	},
+	"BACKUP": {
+		"type": "RegEx",
+		"searchPattern": ".*activeTiles (?P<active_tiles>.*)\\)"
+	},
+	"UPDATE_SERVICELIST_ENTRY": {
+		"type": "RegEx",
+		"searchPattern":".*updateServiceList: (?P<servicelist_entry>.*)"
+	},
+	"UPDATE_SERVICELIST__OBB_V1": {
+		"type": "RegEx",
+		"searchPattern":".*updateServiceList: obb_v1"
+	},
+	"UPDATE_SERVICELIST__CARAPP_OBB": {
+		"type": "RegEx",
+		"searchPattern":".*updateServiceList: carapp_obb"
+	},
+	"PHONE_CALL_TRIGGERED": {
+		"type": "RegEx",
+		"searchPattern": ".*phone.domain.calls:.*number=\\+(?P<phone_number>.*[\\d+])"
+	},
+	"ZERO_CONF_MANAGER_STARTING": {
+		"type": "RegEx",
+		"searchPattern": ".*ZeroConfManager.*startZeroConf().*Starting..."
+	},
+	"DIGITAL_ASSISTANT_STATE_CHANGED": {
+		"type": "RegEx",
+		"searchPattern": ".*onAssistantStateChanged:.*state=.*ia#(?P<assistant_state>.*)@"	},
+	"CURRENT_SPEED": {
+		"type": "RegEx",
+		"searchPattern": ".*Current Speed in kmph: (?P<current_speed>\\d+.\\d+).*"},
+	"GEAR_POSITION": {
+		"type": "RegEx",
+		"searchPattern": ".*car gear was updated to (?P<gear_position>[A-Z_]+).*"}
+}

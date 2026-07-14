@@ -1,0 +1,127 @@
+{
+    "testcase_id": "20484219",
+    "anforderungs_id_version": 0,
+    "revision": 424,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202249, 15444592",
+    "component": "ICO",
+    "testcase_name": "[ICO]UpdateBehaviorOfApp05MajorUpdateICOLockingScreenClickButtonOK",
+    "testcase_description": "Scenario: App has a major update\r\nGiven App has a major update in Group Store\r\nWhen user opens App\r\nThen show Major Update Locking Screen\r\nAnd show list item for App Update",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "CHECK_APN1",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CHECK_APN2",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_SYSTEM_WLAN_STATE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.phone.SetSystemWifiState",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CHECK_LICENSE_IN_SERVICE_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckLicenseInServiceList",
+            "values": {
+                "SERVICE_ID": "ico_v1",
+                "STATE": true
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_MAJOR_UPDATE_AVAILABLE_IN_STORE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.base.error.NoStimulation",
+            "values": {}
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_MAJOR_UPDATE_AVAILABLE_IN_STORE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.base.error.NoStimulation",
+            "values": {}
+        },
+        {
+            "step": "7.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "ICON",
+                "LABEL": "e485_in_car_office_ag"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "LABEL": "OK"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe",
+    "testlevel": "Level_2a_Primary",
+    "changeddate": "2025-10-16T13:15:06.357000Z",
+    "tags": "without_mode_selection; KWD_partly",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

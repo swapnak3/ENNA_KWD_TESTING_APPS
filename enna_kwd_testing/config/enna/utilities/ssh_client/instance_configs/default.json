@@ -1,0 +1,12 @@
+{
+	"MainUnitSSH": {
+		"implementation": "server_scp",
+		"ip": "172.16.250.248",
+		"port": 2222,
+		"username": "root",
+		"password": "",
+		"timeout": 60,
+		"auth_timeout": 30,
+		"banner_timeout": 15
+	}
+}

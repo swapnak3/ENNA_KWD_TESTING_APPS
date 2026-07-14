@@ -1,0 +1,6 @@
+{
+	"default": {
+		"implementation": "server_nunit",
+		"user": "TBD@audi.de"
+	}
+}

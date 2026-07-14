@@ -1,0 +1,12 @@
+{
+	"watchdog_enabled": true,
+	"watchdog_polling": 60,
+	"watchdog_process_list": [
+		"mosquitto.exe",
+		"python.exe",
+		"dongle.exe",
+		"exam47.exe",
+		"adb.exe",
+		"OffboardDiagLauncher.exe"
+	]
+}

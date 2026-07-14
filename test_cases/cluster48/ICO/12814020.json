@@ -1,0 +1,144 @@
+{
+    "testcase_id": "12814020",
+    "anforderungs_id_version": 0,
+    "revision": 551,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202275, 16070982, AHCP3-98646",
+    "component": "ICO",
+    "testcase_name": "[ICO][C][GM]ListEmails11FilterSelectorOpenDropdown",
+    "testcase_description": "Scenario: Open filter selector dropdown menu\r\nGiven name of current filter is displayed within filter selector field (set current filter to \"all\")\r\nWhen filter selector field is clicked\r\nThen open dropdown menu\r\n(And display the name of the 3 available fi",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "CHECK_APN1",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CHECK_APN2",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_SYSTEM_WLAN_STATE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.phone.SetSystemWifiState",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CHECK_LICENSE_IN_SERVICE_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckLicenseInServiceList",
+            "values": {
+                "SERVICE_ID": "ico_v1",
+                "STATE": true
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_USER_MODE_IN_ICO",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {
+                "MODE": "CLOUD_MODE"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_ICO_EMAIL_ACCOUNT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.in_car_office.CheckIcoSettingsEmailAccount",
+            "values": {
+                "ACCOUNT": "GMAIL"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "in_car_office.email_overview"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "ICON",
+                "LABEL": "ic_e427_search_filter"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Audi In Car Office.ico_inbox_screen__title_line_popup_filter_all",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "ICON",
+                "LABEL": "ic_e427_search_filter"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_TEXT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
+            "values": {
+                "LABEL": "VTM.Audi In Car Office.ico_inbox_screen__title_line_popup_filter_read",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-10-16T13:13:50.866000Z",
+    "tags": "cloud_mode; email; not_relevant_for_smartphone_mode; KWD_partly",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

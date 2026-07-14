@@ -1,0 +1,29 @@
+{
+  "APN1_STATE": {
+	  	"regex": ".*availableStateUpdate,*name: l2tpeth0.*new available: \\W(?P<state>\\d*)\\W.*"
+	},
+	"APN2_STATE": {
+		"regex": ".*availableStateUpdate,*name: l2tpeth1.*new available: \\W(?P<state>\\d*)\\W.*"
+	},
+	"HOTSPOTWLAN_V1": {
+		"regex": ".*scStateUpdate.*transactionTypeId='TTCONWiFi-HotspotWlanV1'\\W(?P<connectivity>\\d*)\\W.*"
+	},
+	"DATAPLAN_V1": {
+		"regex": ".*updateDisableReasons\\W+: datplan_v1: Connectivity: \\W(?P<connectivity>\\d*)\\W: Configuration: \\W(?P<configuration>\\d*)\\W: Backend: \\W(?P<backend>\\d*)\\W: License: \\W(?P<license>\\d*).*"
+	},
+	"DATAPLAN_V2": {
+		"regex": ".*scStateUpdate.*transactionTypeId='TTBUNCON-CarAppDataPlanV2'.*disableReasons=\\W(?P<connectivity>\\d*)\\W.*"
+	},
+	"ICO_V1": {
+		"regex": ".*scStateUpdate.*transactionTypeId='TTAPP-ico_v1'.*disableReasons=\\W(?P<connectivity>\\d*)\\W.*"
+	},
+	"IGNITESTORE_V1": {
+		"regex": ".*scStateUpdate.*transactionTypeId='TTAS-Ignitestore'.*disableReasons=\\W(?P<connectivity>\\d*)\\W.*"
+	},
+	"OBB_V1": {
+		"regex": ".*scStateUpdate.*transactionTypeId='TTAPP-obb_v1'.*disableReasons=\\W(?P<connectivity>\\d*)\\W.*"
+	},
+	"OLB_V1": {
+		"regex": ".*scStateUpdate.*transactionTypeId='TTAPP-olb_v1'.*disableReasons=\\W(?P<connectivity>\\d*)\\W.*"
+	}
+}

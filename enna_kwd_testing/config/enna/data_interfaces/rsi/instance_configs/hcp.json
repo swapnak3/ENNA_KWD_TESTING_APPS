@@ -1,0 +1,7 @@
+{
+	"main_unit": {
+		"implementation": "server_requests",
+		"ip": "172.16.250.248",
+		"port": 14712
+	}
+}

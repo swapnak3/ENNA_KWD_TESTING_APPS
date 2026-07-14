@@ -1,0 +1,7 @@
+{
+	"instance_config": "instance_configs/hcp.json",
+	"mapping_file": "uri_mapping.json",
+	"use_cluster_config": false,
+	"ping_timeout": 3,
+	"ping_interval": 0
+}

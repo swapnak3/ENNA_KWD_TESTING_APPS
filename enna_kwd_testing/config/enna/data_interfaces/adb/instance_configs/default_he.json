@@ -1,0 +1,14 @@
+{
+	"HCP3": {
+		"implementation": "server_adbutils",
+		"device_name": "emulator-5554",
+		"device_address": "192.168.250.248",
+		"ssh_port_mapping": {"5037": "127.0.0.1:5037", "27183": "127.0.0.1:27183"},
+		"always_publish_messages": false,
+		"clear_logcat": false,
+		"restart_adb_as_root": true,
+		"decoder": {
+			"class_name": "enna.data_interfaces.adb.decoder.LogcatStreamLineDecoder"
+		}
+	}
+}

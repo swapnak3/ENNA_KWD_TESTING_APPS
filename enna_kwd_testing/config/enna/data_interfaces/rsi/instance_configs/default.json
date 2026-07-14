@@ -1,0 +1,8 @@
+{
+	"main_unit": {
+		"implementation": "server_requests",
+		"ip": "192.168.0.146",
+		"port": 14712,
+		"api_prefix": "viwi"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"HCP3": {
+		"implementation": "server_adbutils",
+		"device_name": "172.16.250.248:5555",
+		"device_address": "172.16.250.248",
+		"device_port": 5555,
+		"always_publish_messages": true,
+		"clear_logcat": true,
+		"start_logcat_reading_initially": true,
+		"restart_adb_as_root": true,
+		"decoder": {
+			"class_name": "enna.data_interfaces.adb.decoder.LogcatStreamLineDecoder"
+		},
+		"matcher": {
+			"class_name": "enna.core.matcher.StringMatcher",
+			"settings": {
+				"config_path": "trace_matcher_ADB.json"
+			}
+		}
+	}
+}

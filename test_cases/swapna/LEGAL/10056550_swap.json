@@ -1,0 +1,115 @@
+{
+    "testcase_id": "10056550",
+    "anforderungs_id_version": 0,
+    "revision": 508,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202134, 18114110, AHCP3-83791",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL][Smoketest] JumpIntoAppFromOtherAppSettingsPrivacyNote",
+    "testcase_description": "no description\r\nInputs:\r\nn/a",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.main"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "obb.SETTINGS_BUTTON"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "obb.settings"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "Privacy policy"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.data_protection_notes",
+                "TIMEOUT": 6.0
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.main"
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1a_Vital",
+    "changeddate": "2025-12-02T09:21:11.179000Z",
+    "tags": "KWD_complete; L0; TCforCID; TCforCID",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

@@ -1,0 +1,6 @@
+{
+    "target": "172.16.250.248",
+    "rsi_port": 14712,
+    "host": "172.16.250.250",
+    "save_path": "D:\\test_run\\ui_layouts"
+}

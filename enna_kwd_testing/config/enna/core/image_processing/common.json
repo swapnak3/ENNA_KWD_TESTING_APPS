@@ -1,0 +1,36 @@
+{
+    "ocr_configs": {
+        "bs_BA": "bos",
+	    "cs_CZ": "ces",
+	    "da_DK": "dan",
+        "de_DE": "deu",
+	    "el_GR": "ell",
+	    "en_GB": "eng",
+        "es_ES": "spa",
+	    "fi_FI": "fin",
+	    "fr_FR": "fra",
+	    "hr_HR": "hrv",
+	    "hu_HU": "hun",
+        "it_IT": "ita",
+	    "nl_NL": "nld",
+	    "no_NO": "nor",
+	    "pl_PL": "pol",
+        "pt_PT": "por",
+	    "ro_RO": "ron",
+	    "ru_RU": "rus",
+	    "sk_SK": "slk",
+	    "sl_SI": "slv",
+	    "sr_RS": "srp",
+	    "sv_SE": "swe",
+	    "tr_TR" : "tur",
+	    "uk_UA": "ukr"
+    },
+    "screen_mask": [
+        0,
+        0,
+        2220,
+        956
+    ],
+    "skip_binarizing": true,
+    "tessdata_path": "tessdata"
+}

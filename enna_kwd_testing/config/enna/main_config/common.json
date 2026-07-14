@@ -1,0 +1,22 @@
+{
+	"console_log_colored": true,
+	"root_log_dir": "./reports",
+	"custom_types_modules": ["enna_st12.custom_types", "enna_kwd_testing.custom_types"],
+	"environment": {
+		"market": "DE",
+		"vehicle_project": "AU416x_Q6",
+		"platform": "UNKNOWN",
+		"test_environment": "HIL",
+		"brand": "AU",
+		"systems_under_test": {
+			"HCP3": {
+				"ip": "172.16.250.248",
+				"software_variant": "ER",
+				"system_language": "de_DE",
+				"keyboard_language": "de_DE",
+				"cluster": 48,
+				"hw_revision": "UNKNOWN"
+			}
+		}
+	}
+}

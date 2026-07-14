@@ -1,0 +1,167 @@
+{
+    "testcase_id": "49559556",
+    "anforderungs_id_version": 0,
+    "revision": 0,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202242, 15142885",
+    "component": "ICO",
+    "testcase_name": "[ICO][C][MS][Mail]Reply04EmailTemplatesOneSender",
+    "testcase_description": "Scenario: Open static templates\r\nGiven replyTo / replyAll button displayed\r\nWhen any reply button is clicked\r\nThen open ICO_EMAIL_TEMPLATES\r\nAnd display <static template> as a list item\r\nAnd display subject of the mail within title line",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "CHECK_APN1",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CHECK_APN2",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_SYSTEM_WLAN_STATE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.phone.SetSystemWifiState",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CHECK_LICENSE_IN_SERVICE_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckLicenseInServiceList",
+            "values": {
+                "SERVICE_ID": "ico_v1",
+                "STATE": true
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_USER_MODE_IN_ICO",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {
+                "MODE": "CLOUD_MODE"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_ICO_EMAIL_ACCOUNT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.in_car_office.CheckIcoSettingsEmailAccount",
+            "values": {
+                "ACCOUNT": "MICROSOFT"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "in_car_office.email_overview"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "E9BF_options_more"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "in_car_office.email_overview_slide_out"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e49e_reply_sender"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Audi In Car Office.ico_reply_templates_screen__template_get_back_to_you_later__text",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "1.1",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Audi In Car Office.ico_reply_templates_screen__template_better_call_me__text",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "1.2",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Audi In Car Office.ico_reply_templates_screen__template_late_but_on_the_way__text",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-10-16T13:14:07.111000Z",
+    "tags": "",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

@@ -1,0 +1,9 @@
+{
+	"not_kill_proc": [
+		"exam*"
+	],
+	"exclude_server": [
+		"enna.utilities.rds"
+	],
+	"exclude_factory": []
+}

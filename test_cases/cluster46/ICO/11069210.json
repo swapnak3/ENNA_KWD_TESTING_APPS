@@ -1,0 +1,140 @@
+{
+    "testcase_id": "11069210",
+    "anforderungs_id_version": 0,
+    "revision": 554,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "15447065, 27825868, AHCP3-120798",
+    "component": "ICO",
+    "testcase_name": "[ICO][-]IconDirectAccessBar",
+    "testcase_description": "Inputs:\r\nnew ICO Icon:\r\nClamps KL15/KL.S: On\r\nonline connectivity available\r\nInCar Office tile is available on homescreen\r\nlogged in in myAudi Account\r\nadded ICO Icon to DirectAccessBar\r\nMMI homescreen is displayed\r\n(E1)Icon is displayed as attached (or s",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "CHECK_APN1",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CHECK_APN2",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_SYSTEM_WLAN_STATE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.phone.SetSystemWifiState",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CHECK_LICENSE_IN_SERVICE_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckLicenseInServiceList",
+            "values": {
+                "SERVICE_ID": "ico_v1",
+                "STATE": true
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_USER_MODE_IN_ICO",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {
+                "MODE": "CLOUD_MODE"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_ICO_EMAIL_ACCOUNT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.in_car_office.CheckIcoSettingsEmailAccount",
+            "values": {
+                "ACCOUNT": "GMAIL"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "In-car office"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "DRAG_AND_DROP",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.DragAndDrop",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e485_in_car_office_ag, LAYOUT_ELEMENT: BUTTON",
+                "LAYOUT_AREA": "BAR_FAVOURITE_BUTTON_3"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "ICON",
+                "XPATH_NAME": "e485_in_car_office_da, MATCH_TEMPLATE: TRUE"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe, North America, Japan, Korea, Rest of World, Taiwan",
+    "testlevel": "Level_2a_Primary",
+    "changeddate": "2025-10-16T13:16:24.880000Z",
+    "tags": "without_mode_selection; KWD_complete; without_mode_selection",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

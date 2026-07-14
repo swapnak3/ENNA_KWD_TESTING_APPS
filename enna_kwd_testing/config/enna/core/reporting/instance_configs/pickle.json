@@ -1,0 +1,13 @@
+{
+	"default": {
+		"implementation": "server_pickle",
+		"exporters": [
+			{
+				"class_name": "enna.core.reporting.exporters.html_exporter.HTMLExporter",
+				"settings": {
+					"template": "template_enna"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"idex": {
+		"implementation": "server_idex",
+		"automation_api_path": "C:\\Program Files (x86)\\VWAudi\\iDEX\\Flashtool42Modules\\NET\\AutomationApi.dll",
+		"project": "AU41X_iDEX",
+		"connection_protocol": "CAN"
+	}
+}

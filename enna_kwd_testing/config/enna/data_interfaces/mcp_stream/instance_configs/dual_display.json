@@ -1,0 +1,10 @@
+{
+    "center": {
+        "implementation": "server_selenium",
+        "display_name": "Display_CID"
+    },
+    "kombi": {
+        "implementation": "server_selenium",
+        "display_name": "Display_FID"
+    }
+}
