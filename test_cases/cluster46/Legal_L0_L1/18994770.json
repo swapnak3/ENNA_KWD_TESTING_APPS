@@ -1,0 +1,112 @@
+{
+    "testcase_id": "18994770",
+    "anforderungs_id_version": 0,
+    "revision": 508,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202124, 18120066, AHCP3-91850",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] BlockingDisclaimerLocalSettingsWhileDriving",
+    "testcase_description": "Action:\r\n1.Navigate to LEGAL_SETTINGS\r\n2. Set drive Mode\r\n3. Click on any Entry\r\n4. Check is Visible LEGAL_BLOCKING_TOAST",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.settings"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "DRIVE",
+                "SPEED_IN_M_PER_S": 30.0
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_ELEMENT_GREYED_OUT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.colors.CheckElementGreyOut",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Legal.legal_settings_screen__open_source_license__title",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "PARKING",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_ELEMENT_NOT_GREYED_OUT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.colors.CheckElementNotGreyOut",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "VTM.Legal.legal_settings_screen__open_source_license__title",
+                "LABEL_SOURCE": "AudiApps",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "DRIVE",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-08-19T15:17:58.404000Z",
+    "tags": "KWD_complete; TCforCID; AutomationDone; Regression DET1",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}
