@@ -51,7 +51,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
             "values": {
                 "ELEMENT": "ICON",
-                "XPATH_NAME": "e4d9_legal_ag"
+                "XPATH_NAME": "launcher.APP_TILE_LEGAL"
             }
         },
         {
@@ -95,7 +95,7 @@
             }
         }
     ],
-    "expectedresult": [
+     "expectedresult": [
         {
             "step": "1.0",
             "name": "CHECK_IS_VISIBLE_ELEMENT",
@@ -103,7 +103,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
             "values": {
                 "ELEMENT": "BUTTON",
-                "XPATH_NAME": "SETTINGS_BUTTON"
+                "XPATH_NAME": "legal.SETTINGS_BUTTON"
             }
         }
     ],

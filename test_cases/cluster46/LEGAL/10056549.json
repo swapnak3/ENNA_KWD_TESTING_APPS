@@ -51,7 +51,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
             "values": {
                 "ELEMENT": "ICON",
-                "XPATH_NAME": "e4d9_legal_ag"
+                "XPATH_NAME": "launcher.APP_TILE_LEGAL"
             }
         }
     ],

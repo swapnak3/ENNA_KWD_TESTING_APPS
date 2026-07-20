@@ -53,14 +53,14 @@
                 "SCREEN_NAME": "radio.main_dab_fm"
             }
         },
-        {
+         {
             "step": "6.0",
             "name": "CLICK",
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
                 "ELEMENT": "BUTTON",
-                "XPATH_NAME": "SETTINGS_BUTTON"
+                "XPATH_NAME": "radio.SETTINGS_BUTTON"
             }
         },
         {

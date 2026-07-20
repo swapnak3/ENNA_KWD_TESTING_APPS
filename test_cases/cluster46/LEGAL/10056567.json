@@ -35,14 +35,14 @@
                 "SCREEN_NAME": "legal.overview"
             }
         },
-        {
+         {
             "step": "4.0",
             "name": "CLICK",
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
                 "ELEMENT": "BUTTON",
-                "XPATH_NAME": "SETTINGS_BUTTON"
+                "XPATH_NAME": "legal.SETTINGS_BUTTON"
             }
         },
         {
@@ -92,7 +92,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
             "values": {
                 "ELEMENT": "BUTTON",
-                "XPATH_NAME": "GO_TO_TOP_BUTTON"
+                "XPATH_NAME": "legal.GO_TO_TOP"
             }
         }
     ],
