@@ -53,7 +53,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
                 "ELEMENT": "ICON",
-                "XPATH_NAME": "BACK_BUTTON"
+                "XPATH_NAME": "obb.BACK_BUTTON"
             }
         }
     ],

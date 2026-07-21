@@ -106,16 +106,16 @@
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
-                "XPATH_NAME": "obb.WARNING_ICON"
+                "XPATH_NAME": "obb.WARNING_BUTTON"
             }
         }
     ],
     "expectedresult": [
         {
             "step": "1.0",
-            "name": "CHECK_TEXT",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
             "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
             "values": {
                 "LABEL": "\u2013 Never adjust the seats when the vehicle is moving \u2013 this could lead to an accident."
             }

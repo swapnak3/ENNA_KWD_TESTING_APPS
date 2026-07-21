@@ -54,7 +54,7 @@
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
             "values": {
-                "LABEL": "Version"
+                "LABEL": "Version 26.08.01.46"
             }
         }
     ],
