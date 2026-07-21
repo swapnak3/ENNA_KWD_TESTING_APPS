@@ -105,6 +105,7 @@ MAIN_SUPPLEMENTS_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//
 MAIN_FAQ_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//*[@resource-id='dashboard-FAQ']")
 MAIN_WARNING_LAMPS_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//*[@resource-id='dashboard-LAMPS']")
 MAIN_INDEX_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//*[@resource-id='dashboard-INDEX']")
+MAIN_INDEX_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//*[@resource-id='dashboard-INDEX']")
 MAIN_INFO_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//*[@resource-id='dashboard-INFO']")
 NIX = XpathString("//*[@text='nur als platzhalter fuer obb nix']") #_todo
 
@@ -117,7 +118,7 @@ OSSN_SEARCH_BUTTON = XpathString("//*[@resource-id='com.valtech_mobility.obb.aud
 SEARCH_EDIT_TEXT_BOX_TITLE = XpathString("//*[@resource-id='com.valtech_mobility.obb.audi:id/editText']")
 SEARCH_RESULT = XpathString("//*[contains(@text, 'No search results for:') or contains(@text, 'Search results for:') or contains(@text, 'Suchergebnisse für:') or contains(@text, 'Kein Suchergebnis für:')]") #_todo
 SEARCH_WEBCONTENT_TITLE = XpathString("//*[@class-id='android.webkit.WebView'] or //*[@resource-id='com.valtech_mobility.obb.audi:id/web_content']")
-SETTINGS_BUTTON = XpathString("//*[@class='android.widget.ImageButton'][@package='com.valtech_mobility.obb.audi'][@content-desc='Einstellungen für Online-Bordbuch###Einstellungen für Online-Bordbuch' or @content-desc='Settings for Online manuals###Settings for Online manuals']")
+SETTINGS_BUTTON = XpathString("//*[@resource-id='com.valtech_mobility.obb.audi:id/menuActionContainer']/..//*[@class='android.widget.ImageButton']")###Einstellungen für Online-Bordbuch' or @content-desc='Settings for Online manuals###Settings for Online manuals']")
 
 SETTINGS_CHANGE_LANGUAGE_BUTTON = XpathString("//*[@class='android.widget.ListView']/.//*[@class='android.widget.Image'][@package='com.valtech_mobility.obb.audi']")
 SETTINGS_CHANGE_LANGUAGE_TITLE = XpathString("//*[@class='android.widget.ListView']/.//*[contains(@resource-id, 'language-')]")

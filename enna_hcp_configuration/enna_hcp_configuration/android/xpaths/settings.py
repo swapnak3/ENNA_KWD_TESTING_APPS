@@ -151,6 +151,8 @@ PRIVACY_LIST_CONTAINER = XpathString("//*[@class='androidx.recyclerview.widget.R
 LIST_ITEM_AUDI_ASSISTANT = XpathString("//*[contains(@content-desc, '###oem_digital_assistant_settings_entry') or @content-desc='###technology.cariad.assistant']")
 
 LIST_ITEM_SYSTEM = XpathString("//*[contains(@content-desc, '###system_settings_entry')]")
+#LIST_ITEM_SYSTEM = XpathString("//android.widget.FrameLayout[@resource-id='com.android.car.settings:id/top_level_recycler_view']/android.widget.FrameLayout[@resource-id='com.android.car.settings:id/car_ui_recycler_view']/androidx.recyclerview.widget.RecyclerView[@resource-id='com.android.car.settings:id/car_ui_internal_recycler_view']/android.widget.FrameLayout[@content-desc='###system_settings_entry']")
+#LIST_ITEM_SYSTEM = XpathString("//android.widget.FrameLayout[@resource-id='com.android.car.settings:id/settings_recycler_view']/android.widget.FrameLayout[@resource-id='com.android.car.settings:id/car_ui_recycler_view']/androidx.recyclerview.widget.RecyclerView[@resource-id='com.android.car.settings:id/car_ui_internal_recycler_view']/android.widget.FrameLayout[@content-desc='###system_settings_entry']")
 LIST_ITEM_SYSTEM_TEXT = XpathString(f"{LIST_ITEM_SYSTEM}//*[contains(@class, 'android.widget.TextView')]")
 LIST_ITEM_SYSTEM_LEADING_ICON = XpathString(f"{LIST_ITEM_SYSTEM}//*[@resource-id='android:id/icon']")
 LIST_ITEM_SYSTEM_SUBMENU_ICON = XpathString(f"{LIST_ITEM_SYSTEM}//*[@index='2'][@resource-id='android:id/widget_frame']")
@@ -206,6 +208,7 @@ LIST_ITEM_APP_FOR_DIGITAL_ASSISTANT_TEXT = XpathString(f"{LIST_ITEM_APP_FOR_DIGI
 LIST_ITEM_APP_FOR_DIGITAL_ASSISTANT_LEADING_ICON = XpathString(f"{LIST_ITEM_APP_FOR_DIGITAL_ASSISTANT}//*[@resource-id='android:id/icon']")
 LIST_ITEM_APP_FOR_DIGITAL_ASSISTANT_SUBMENU_ICON = XpathString(f"{LIST_ITEM_APP_FOR_DIGITAL_ASSISTANT}//*[@index='2'][@resource-id='android:id/widget_frame']")
 
+#LIST_ITEM_SYSTEM_LANGUAGESINPUT = XpathString("//android.widget.FrameLayout[@resource-id='com.android.car.settings:id/settings_recycler_view']/android.widget.FrameLayout[@resource-id='com.android.car.settings:id/car_ui_recycler_view']/androidx.recyclerview.widget.RecyclerView[@resource-id='com.android.car.settings:id/car_ui_internal_recycler_view']/android.widget.FrameLayout[@content-desc='###language_settings_entry']")
 LIST_ITEM_SYSTEM_LANGUAGESINPUT = XpathString("//*[contains(@content-desc, '###languages_and_input_settings')]")
 LIST_ITEM_SYSTEM_LANGUAGESINPUT_TEXT = XpathString(f"{LIST_ITEM_SYSTEM_LANGUAGESINPUT}//*[contains(@class, 'android.widget.TextView')]")
 LIST_ITEM_SYSTEM_LANGUAGESINPUT_SUBMENU_ICON = XpathString(f"{LIST_ITEM_SYSTEM_LANGUAGESINPUT}//*[contains(@class, 'android.widget.ImageView')]")
@@ -270,6 +273,7 @@ APPS_APP_INFO_LIST_ITEM_VIDEO_TEXT = XpathString(f"{LIST_CONTAINER}//*[contains(
 APPS_APP_INFO_VIEWALL_AUDI_ASSISTANT_LIST_ITEM = XpathString("//*[contains(@content-desc, '###oem_digital_assistant_settings_entry') or @content-desc='###technology.cariad.assistant']")
 APPS_APP_INFO_VIEWALL_CAR_LIST_ITEM = XpathString("//*[@content-desc='###de.eso.car.audi']")
 APPS_APP_INFO_VIEWALL_CAR2PHONE_LIST_ITEM = XpathString("//*[@content-desc='###technology.cariad.hcp3.car2phone.audi']")
+
 APPS_APP_INFO_VIEWALL_EXPERIENCES_LIST_ITEM = XpathString(clu46="//*[@content-desc='###technology.cariad.interiorexperience.audi.experiences']",
 														  clu55="//*[@content-desc='###technology.cariad.interiorexperience.icc.mqb.audi.experiences']")
 APPS_APP_INFO_VIEWALL_LEGAL_LIST_ITEM = XpathString("//*[@content-desc='###com.valtech_mobility.legal.audi']")

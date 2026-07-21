@@ -1,7 +1,7 @@
 {
   "center": {
     "home_button": [140, 144, 259, 263],
-    "-9": [259, 144, 378, 263],
+    "app_grit_button": [259, 144, 378, 263],
     "first_favorite_button": [140,263, 259,382],
     "second_favorite_button": [259,263, 378,382],
     "third_favorite_button": [140,382, 259,501],

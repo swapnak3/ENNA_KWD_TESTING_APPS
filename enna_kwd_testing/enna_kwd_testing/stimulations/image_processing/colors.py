@@ -25,7 +25,7 @@ class ColorsBGR(enum.Enum):
 	WHITE = [255, 255, 255]
 	DARK_WHITE = [225, 225, 225]
 	BLACK = [0, 0, 0]
-	LIGHT_BLACK = [30, 30, 30]
+	LIGHT_BLACK = [60, 60, 60]
 
 
 def _get_color_mask(image: enna.core.image_processing.image.Image, dark_threshold: list[int],

@@ -1,22 +1,25 @@
 # -*- coding: utf-8 -*-
 """Module contains the stimulation factory to create dependencies for a stimulation factory.
 
-Collected dependencies amount: 10
+Collected dependencies amount: 13
 
 ### Required dependencies for testset ###
 
-enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage
 enna_kwd_testing.stimulations.apps.general.NavigateToScreen
-enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15
-enna_kwd_testing.stimulations.apps.general.ClickOnElement
-enna_kwd_testing.stimulations.apps.privacy.SetMobileData
-enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible
-enna_kwd_testing.stimulations.apps.general.ClickElementInList
-enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS
-enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs
 enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction
+enna_kwd_testing.stimulations.actions.android_hmi.time.SetSpecificDateInSystem
+enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode
+enna_kwd_testing.stimulations.logging.checks.CheckApn2
+enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible
+enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS
+enna_kwd_testing.stimulations.adb.apn.SetApn2
+enna_kwd_testing.stimulations.adb.general.SetDrivingSide
+enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible
+enna_kwd_testing.stimulations.apps.privacy.SetMobileData
+enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage
+enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15
 
-Generation date: 2026-02-19 09:45:03.845754
+Generation date: 2026-07-21 08:10:15.178556
 """
 
 import enna.core.component_system.decorators
@@ -28,13 +31,16 @@ import enna_kwd_testing.factories.testcasefactory
 @enna.core.component_system.decorators.RequireComponent("enna.data_interfaces.adb")
 @enna.core.component_system.decorators.RequireComponent("enna_st12.data_interfaces.android_hmi", instance_name=enna_st12.instance_names.AndroidHMI.CENTER)
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction", arg_name="enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction")  # noqa # pylint: disable=line-too-long
-@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs", arg_name="enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs")  # noqa # pylint: disable=line-too-long
+@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.actions.android_hmi.time.SetSpecificDateInSystem", arg_name="enna_kwd_testing.stimulations.actions.android_hmi.time.SetSpecificDateInSystem")  # noqa # pylint: disable=line-too-long
+@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.adb.apn.SetApn2", arg_name="enna_kwd_testing.stimulations.adb.apn.SetApn2")  # noqa # pylint: disable=line-too-long
+@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.adb.general.SetDrivingSide", arg_name="enna_kwd_testing.stimulations.adb.general.SetDrivingSide")  # noqa # pylint: disable=line-too-long
+@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible", arg_name="enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible")  # noqa # pylint: disable=line-too-long
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible", arg_name="enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible")  # noqa # pylint: disable=line-too-long
-@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.general.ClickElementInList", arg_name="enna_kwd_testing.stimulations.apps.general.ClickElementInList")  # noqa # pylint: disable=line-too-long
-@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.general.ClickOnElement", arg_name="enna_kwd_testing.stimulations.apps.general.ClickOnElement")  # noqa # pylint: disable=line-too-long
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.general.NavigateToScreen", arg_name="enna_kwd_testing.stimulations.apps.general.NavigateToScreen")  # noqa # pylint: disable=line-too-long
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.privacy.SetMobileData", arg_name="enna_kwd_testing.stimulations.apps.privacy.SetMobileData")  # noqa # pylint: disable=line-too-long
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage", arg_name="enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage")  # noqa # pylint: disable=line-too-long
+@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.logging.checks.CheckApn2", arg_name="enna_kwd_testing.stimulations.logging.checks.CheckApn2")  # noqa # pylint: disable=line-too-long
+@enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode", arg_name="enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode")  # noqa # pylint: disable=line-too-long
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15", arg_name="enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15")  # noqa # pylint: disable=line-too-long
 @enna.core.component_system.decorators.RequireStimulation("enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS", arg_name="enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS")  # noqa # pylint: disable=line-too-long
 class DependencyFactory(enna_kwd_testing.factories.testcasefactory.TestcaseFactory):

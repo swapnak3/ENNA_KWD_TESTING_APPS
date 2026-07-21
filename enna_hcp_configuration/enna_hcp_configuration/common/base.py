@@ -60,7 +60,7 @@ class Element:
 
 		:param str name: name of the element
 		:param detector_extension: a detector for this element
-		:type detector_extension: callable or objec\
+		:type detector_extension: callable or object
 		"""
 		self.name = name
 		self.detector = detector_extension

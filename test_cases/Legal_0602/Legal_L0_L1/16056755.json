@@ -1,0 +1,93 @@
+{
+    "testcase_id": "16056755",
+    "anforderungs_id_version": 0,
+    "revision": 508,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202142, 18032614, AHCP3-79356",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] LEGAL_OVERVIEW_DataPrivacy",
+    "testcase_description": "SET_UP_MOBILE_DATA (STATE: ON)\r\nCHECK_CURRENT_SYSTEM_LANGUAGE (LANG: de_DE)\r\nSET_UP_APN2 (STATE: CONNECTED)\r\nCHECK_APN1 (STATE: CONNECTED)\r\nSET_SPECIFIC_DATE_IN_SYSTEM (DATE: TODAY)",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.CheckSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.overview"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "Data protection notes"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-08-19T15:17:58.086000Z",
+    "tags": "KWD_complete; TCforCID",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

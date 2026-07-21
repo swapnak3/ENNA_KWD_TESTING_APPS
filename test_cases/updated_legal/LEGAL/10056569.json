@@ -1,0 +1,96 @@
+{
+    "testcase_id": "10056569",
+    "anforderungs_id_version": 0,
+    "revision": 556,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202124, 18120066, AHCP3-91850",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] LocalSettingsScreen - ScrollToTopInOpenSourceText",
+    "testcase_description": "1. Go to Legal Settings OSD -> OSD is opened\r\n2. Scroll in List -> Scroll in OSD Text\r\n3. Click Go To Top Button -> Text is at the beginning",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.settings_open_source_software_notice"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "SCROLL_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "General Notices"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "legal.GO_TO_TOP"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_TEXT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
+            "values": {
+                "LABEL": "VTM.Legal.legal_settings_screen__open_source_license__title",
+                "LABEL_SOURCE": "center",
+                "LANG": "en_GB"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-08-19T15:17:55.818000Z",
+    "tags": "KWD_complete; TCforCID; TCforCID",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

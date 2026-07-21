@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Analyzer for the legal App."""
 
 import enna_hcp_configuration.android.contexts

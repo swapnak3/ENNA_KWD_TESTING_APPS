@@ -1,0 +1,120 @@
+{
+    "testcase_id": "22006109",
+    "anforderungs_id_version": 0,
+    "revision": 406,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202124, 18120066, AHCP3-91850",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] LocalSettingsScreen-CheckContent(OpenSource, VersionInfo)ClicjkBack",
+    "testcase_description": "2. (A2) Click local settings button -> Check Headline and list entrys; Settings, OSD and Version Info\r\n3. (A3) Click Open source licenses -> Scroll To Top Button, Headline named OSD, text is scrollable\r\n4. (A4) Click back button -> retuns to LEGAL_SETTING",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.overview"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "legal.SETTINGS_BUTTON"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_TEXT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
+            "values": {
+                "LABEL": "VTM.Legal.legal_settings_screen__open_source_license__title"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_TEXT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
+            "values": {
+                "LABEL": "VTM.Legal.legal_settings_screen__app_version__title"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "LABEL": "VTM.Legal.legal_settings_screen__open_source_license__title"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "XPATH_NAME": "legal.SETTINGS_BACK_BUTTON"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.settings"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-11-14T10:53:58.852000Z",
+    "tags": "KWD_complete; TCforCID; AutomationDone; Regression DET1",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

@@ -265,12 +265,12 @@ class CheckColorOfWarningLampsInObb(enna_kwd_testing.stimulations.base.keyword_s
 
 	class WarningLampColors(enum.Enum):
 		"""Constants of colors. BGR Color"""
-		RED = ((0, 0, 180), (50, 20, 255))
+		RED = ((0, 50, 150), (120, 140, 255))
 		YELLOW = ((0, 160, 245), (5, 180, 255))
 		GREEN = ((0, 150, 0), (20, 255, 20))
 		BLUE = ((215, 150, 0), (255, 170, 5))
 		WHITE = ((250, 250,250), (255, 255, 255))
-		BLACK = ((0, 0, 0), (5, 5, 5))
+		BLACK = ((200, 200,200), (255, 255, 255))
 
 	def __init__(self, reporting: enna.core.reporting.interface.Interface, android_hmi: enna_st12.data_interfaces.android_hmi.interface.Interface, menu_navigation: enna_st12.utilities.menu_navigation.interface.Interface):
 		"""Initialize stimulation.

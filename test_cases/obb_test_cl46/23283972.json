@@ -1,0 +1,148 @@
+{
+    "testcase_id": "23283972",
+    "anforderungs_id_version": 0,
+    "revision": 391,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "18035252, 15976497, AHCP3-148568",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL] RightHandDriveLEGAL_SETTINGS",
+    "testcase_description": "Set Right Hand drive via:\r\n__Right hand drive__: adb shell diag-tester -n and uds -s ext\r\nwrite -i 0x600 -v 000000100000000000000000\r\nreboot\r\n__Left hand drive__: adb shell diag-tester -n and uds -s ext write -i 0x0600 -v 000000000000000000000000\r\nreboot",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVER_STATUS",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.adb.general.SetDrivingSide",
+            "values": {
+                "SIDE": "RHD"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "SET_SPECIFIC_DATE_IN_SYSTEM",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.time.SetSpecificDateInSystem",
+            "values": {
+                "DATE": "TODAY"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_APN1",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "CHECK_APN2",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.logging.checks.CheckApn2",
+            "values": {
+                "STATE": true
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "SET_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "PARKING",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        },
+        {
+            "step": "10.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "legal.settings"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_ELEMENT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "LABEL": "BACK_BUTTON"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVER_STATUS",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.adb.general.SetDrivingSide",
+            "values": {
+                "SIDE": "LHD"
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "manually",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_2b_Secondary",
+    "changeddate": "2025-08-19T15:17:59.232000Z",
+    "tags": "KWD_complete; TCforCID; Regression DET1",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

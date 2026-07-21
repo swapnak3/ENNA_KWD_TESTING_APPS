@@ -51,5 +51,5 @@ IMPRINT_BUTTON = XpathString(f"//*[@resource-id='com.valtech_mobility.legal.audi
 DATA_PROTECTION_NOTES_BUTTON = XpathString(f"//*[@resource-id='com.valtech_mobility.legal.audi:id/listItemGrid2MainContent_textStart']{str(privacymode.settings_entry_legal_disclaimer).replace("Datenschutzhinweise", "Datenschutzinformation Connect")}")  # ToDo TextTool
 SETTINGS_BUTTON = XpathString("//*[@resource-id='com.valtech_mobility.legal.audi:id/menuActionContainer']/..//*[@class='android.widget.ImageButton']")
 OPEN_SOURCE_SOFTWARE_NOTICE_BUTTON = XpathString("//*[contains(@content-desc, 'com.valtech_mobility.legal.audi:string/legal_settings_screen__open_source_license__title')]")
-
+GO_TO_TOP = XpathString("//*[contains(@content-desc,'LongTextDisclaimer-goToTopAction')]")
 DATAPRIVACY_BUTTON = XpathString(f"//*{olb.logbook_settings_screen__data_protection_information__text}")
