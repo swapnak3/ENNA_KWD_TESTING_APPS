@@ -1,0 +1,146 @@
+{
+    "testcase_id": "10024439",
+    "anforderungs_id_version": 0,
+    "revision": 548,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202168, 17394017, AHCP3-51886",
+    "component": "OBB",
+    "testcase_name": "[OBB] Article details_02",
+    "testcase_description": "no description\r\nInputs:\r\nn/a\r\nPre-Condition:\r\nBefore_you_set_off: Vor der Fahrt\r\nHow do i adjust the seats: Wie stelle ich den Sitz ein?\r\nGeneral_notes : Sicheheitshinweise zu den Vodersitzen\r\nSitting_correctly_and_Safely : Richtig und sicher Sitzen\r\nYou_",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "SET_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.faq"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "LABEL": "Before you set off"
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "LABEL": "How do I adjust the seats?"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "LABEL": "How do I adjust the seats?"
+            }
+        },
+        {
+            "step": "8.0",
+            "name": "CHECK_TEXT",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.image_processing.general.CheckText",
+            "values": {
+                "LABEL": "Safety information on the front seats"
+            }
+        },
+        {
+            "step": "9.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "LABEL": "Safety information on the front seats"
+            }
+        },
+        {
+            "step": "10.0",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "LABEL": "You can press the pedals down completely with your legs still slightly bent."
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "XPATH_NAME": "obb.WARNING_BUTTON"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "LABEL": "\u2013 Never adjust the seats when the vehicle is moving \u2013 this could lead to an accident."
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_52, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, North America, Rest of World",
+    "testlevel": "Level_2a_Primary",
+    "changeddate": "2025-12-11T06:42:41.742000Z",
+    "tags": "KWD_complete; Regression DET1",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}
