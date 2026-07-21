@@ -1,0 +1,105 @@
+{
+    "testcase_id": "10024458",
+    "anforderungs_id_version": 0,
+    "revision": 548,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202208, 16381434, AHCP3-31533",
+    "component": "OBB",
+    "testcase_name": "[OBB] Driver Disctraction \"Open OBB while driving\"",
+    "testcase_description": "CHECK_TIME_IN_SYSTEM (TIME: TRUE)\r\nSET_UP_MOBILE_DATA (STATE: ON)\r\nCHECK_APN1 (STATE: CONNECTED)\r\ne77a_car_boardbook_ag = Online Bordbuch = Online manuals",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.CheckSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "launcher.app_list"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "DRIVE",
+                "SPEED_IN_M_PER_S": 30.0
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "XPATH_NAME": "launcher.APP_TILE_ONLINE_MANUALS"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "obb.blocked"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "PARKING",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_52, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, North America, Rest of World",
+    "testlevel": "Level_1a_Vital",
+    "changeddate": "2025-12-05T09:46:58.027000Z",
+    "tags": "KWD_complete; AutomationDone",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}
