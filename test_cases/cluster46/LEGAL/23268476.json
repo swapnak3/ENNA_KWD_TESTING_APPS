@@ -12,8 +12,10 @@
             "step": "1.0",
             "name": "SET_DRIVER_STATUS",
             "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.base.error.NoStimulation",
-            "values": {}
+            "automation": "enna_kwd_testing.stimulations.adb.general.SetDrivingSide",
+            "values": {
+                "SIDE": "RHD"
+            }
         },
         {
             "step": "2.0",
@@ -124,8 +126,10 @@
             "step": "1.0",
             "name": "SET_DRIVER_STATUS",
             "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.base.error.NoStimulation",
-            "values": {}
+            "automation": "enna_kwd_testing.stimulations.adb.general.SetDrivingSide",
+            "values": {
+                "SIDE": "LHD"
+            }
         }
     ],
     "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",

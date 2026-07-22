@@ -12,6 +12,7 @@ import enna.data_interfaces.adb.exceptions
 import enna_kwd_testing.stimulations.base.keyword_stim_baseclass
 import enna_kwd_testing.utilities.json_loader.interface
 import enna_kwd_testing.stimulations.adb
+from enna_kwd_testing.utilities.helper.adb import set_driving_side
 
 
 
@@ -251,3 +252,51 @@ class CheckAppIsInstalledOnSystem(enna_kwd_testing.stimulations.base.keyword_sti
 		state_message = "not installed" if expected_installed_state else "installed"
 		self._reporting.add_report_message_system_error(f"App '{app_name}' is {state_message}.")
 		return False
+@enna.core.component_system.decorators.RequireComponent("enna.core.reporting")
+@enna.core.component_system.decorators.RequireComponent("enna.data_interfaces.adb")
+class SetDrivingSide(_BaesADBShellCommadForPackage):
+    """Set vehicle driving side via ADB."""
+
+    def __init__(
+            self,
+            reporting: enna.core.reporting.interface.Interface,
+            adb: enna.data_interfaces.adb.interface.Interface) -> None:
+        """Initialize stimulation."""
+
+        super().__init__(
+            reporting=reporting,
+            adb = adb)
+
+        self._adb = adb
+        self.allowed_parameter_keys = ["SIDE"]
+
+    def _action(self) -> bool:
+        """Set driving side."""
+
+        side = self.values.get("SIDE", "").upper()
+
+        if side not in ["LHD", "RHD"]:
+            self._reporting.add_report_message_ta_error(f"Invalid SIDE '{side}'. Use LHD or RHD.")
+            return False
+
+        try:
+            result = set_driving_side(
+                adb=self._adb,
+                side=side
+            )
+        except enna.data_interfaces.adb.exceptions.ADBException as error:
+            self._reporting.add_report_message_ta_error(
+                f"Failed to set driving side: {error}"
+            )
+            return False
+
+        if not result:
+            self._reporting.add_report_message_system_error(
+                f"Failed to change driving side to {side}")
+            return False
+
+        self._reporting.add_report_message_pass(
+            f"Driving side successfully changed to {side}")
+
+        return True
+
