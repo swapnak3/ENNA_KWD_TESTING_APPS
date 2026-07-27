@@ -214,59 +214,37 @@ def set_keyboard(adb) -> bool:
         MODULE_LOGGER.error(f"Error: {exception}")
         return False
     return True
+
+
 def set_driving_side(adb, side: str) -> bool:
     """Set vehicle driving side via adb."""
 
     try:
         side = side.upper()
-
         if side not in ["LHD", "RHD"]:
-            MODULE_LOGGER.error(
-                f"Invalid driving side '{side}'."
-            )
+            MODULE_LOGGER.error(f"Invalid driving side '{side}'.")
             return False
 
         MODULE_LOGGER.info("Executing adb root")
         adb.execute_shell_command(" root")
-
         MODULE_LOGGER.info("Waiting 2 minutes after root")
         enna.core.time.sleep(120)
 
         MODULE_LOGGER.info("Executing adb remount")
         adb.execute_shell_command(" remount")
-
         MODULE_LOGGER.info("Waiting 4 minutes after remount")
         enna.core.time.sleep(240)
 
-        value = (
-            "000000100000000000000000"
-            if side == "RHD"
-            else "000000000000000000000000"
-        )
-
-        adb_command = (
-            f"diag-tester -n and uds -s ext "
-            f"write -i 0x0600 -v {value}"
-        )
-
-        MODULE_LOGGER.info(
-            f"Changing driving side to {side}"
-        )
-
+        value = ("000000100000000000000000" if side == "RHD" else "000000000000000000000000")
+        adb_command = (f"diag-tester -n and uds -s ext " f"write -i 0x0600 -v {value}")
+        MODULE_LOGGER.info(f"Changing driving side to {side}")
         adb.execute_shell_command(adb_command)
-
-        MODULE_LOGGER.info(
-            "Waiting 5 minutes after writing driving-side coding"
-        )
-
+        MODULE_LOGGER.info("Waiting 5 minutes after writing driving-side coding")
         enna.core.time.sleep(60)
 
         MODULE_LOGGER.info("Rebooting IVI")
-
         adb.execute_shell_command(" reboot")
-
         enna.core.time.sleep(300)
-
         return True
 
     except enna.data_interfaces.adb.exceptions.ADBException as exception:
