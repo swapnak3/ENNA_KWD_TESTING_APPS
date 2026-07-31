@@ -86,3 +86,4 @@ class XpathString:
 APP_LIST_BUTTON = XpathString("//*[@resource-id='com.android.systemui:id/navigation_bar_app_grid_button']") # needed for call in enna_st12.data_interfaces.android_hmi
 MEDIA_PLAYER_CURRENT_PLAYTIME = XpathString("//*[@resource-id='com.android.car.media:id/current_time']") # needed for blacklist by scroll to top or bottom
 UNDEFINED = XpathString("//*[@state='undefined']")
+MAIN_LIST = XpathString("//*[@scrollable='true'][@class='android.view.View']")
