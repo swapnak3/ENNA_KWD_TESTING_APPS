@@ -53,7 +53,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
                 "ELEMENT": "ICON",
-                "XPATH_NAME": "SETTINGS_BUTTON"
+                "XPATH_NAME": "obb.SETTINGS_BUTTON"
             }
         }
     ],

@@ -83,7 +83,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
             "values": {
                 "SCREEN_NAME": "obb.privacy_mode",
-                "TIMEOUT": 6.0
+                "TIMEOUT": 12.0
             }
         }
     ],

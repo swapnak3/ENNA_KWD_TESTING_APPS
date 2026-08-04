@@ -106,7 +106,7 @@
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
-                "XPATH_NAME": "obb.WARNING_ICON"
+                "XPATH_NAME": "obb.WARNING_BUTTON"
             }
         }
     ],
