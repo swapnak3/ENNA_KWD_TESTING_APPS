@@ -265,7 +265,7 @@ class CheckColorOfWarningLampsInObb(enna_kwd_testing.stimulations.base.keyword_s
 
 	class WarningLampColors(enum.Enum):
 		"""Constants of colors. BGR Color"""
-		RED = ((40, 0, 120), (140, 100, 255))
+		RED = ((0, 50, 150), (120, 140, 255))
 		YELLOW = ((0, 160, 245), (5, 180, 255))
 		GREEN = ((0, 150, 0), (20, 255, 20))
 		BLUE = ((215, 150, 0), (255, 170, 5))
