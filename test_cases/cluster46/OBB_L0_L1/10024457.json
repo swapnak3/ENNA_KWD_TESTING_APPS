@@ -1,0 +1,95 @@
+{
+    "testcase_id": "10024457",
+    "anforderungs_id_version": 0,
+    "revision": 548,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202168, 17394017, AHCP3-51886",
+    "component": "OBB",
+    "testcase_name": "[OBB] Article",
+    "testcase_description": "(A1)Open article (via Chapters, FAQ, Search, Index, etc.)\r\n(A2) Tap on a popup-icon on the right side\r\n(E1)Article screen is displayed\r\n(E2) Content popup is shown",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.CheckSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.main"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK_ELEMENT_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickElementInList",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "Chapters"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "obb.chapters"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.main"
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_52, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, North America, Rest of World",
+    "testlevel": "Level_1a_Vital",
+    "changeddate": "2025-12-02T10:10:05.705000Z",
+    "tags": "KWD_complete; AutomationBlocked",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}

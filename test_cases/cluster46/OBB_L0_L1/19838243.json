@@ -1,0 +1,93 @@
+{
+    "testcase_id": "19838243",
+    "anforderungs_id_version": 0,
+    "revision": 466,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "14202201, 16647123, AHCP3-31689",
+    "component": "OBB",
+    "testcase_name": "[OBB] Find article via index",
+    "testcase_description": "(A1) Click on \"Indexsuche\" (listentry on the overview)\r\n(A2) Tap on a letter\r\n(A3) Click on a shown proposal (article)\r\n(E1) New window with textfield appears. Keyindex are shown.\r\n(E2) Index for the letter is shown\r\n(E3) article is shown",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "CHECK_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.CheckSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.index_search"
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "CLICK_ON_INDEX",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.obb.ClickOnIndex",
+            "values": {
+                "INDEX": "G"
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_IS_VISIBLE_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "Glove box"
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "NO_INTERACTION",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
+            "values": {}
+        }
+    ],
+    "cluster": "CL_51, CL_52, CL_53, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, North America, Rest of World",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2025-11-25T12:49:10.273000Z",
+    "tags": "KWD_complete; AutomationDone",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}
