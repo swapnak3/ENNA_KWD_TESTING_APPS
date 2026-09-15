@@ -34,16 +34,36 @@
             "values": {
                 "LANG": "en_GB"
             }
+        },
+        {
+            "step": "4.0",
+            "name": "NAVIGATE_TO_SCREEN",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.main"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "SCROLL_IN_LIST",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ScrollInList",
+            "values": {
+                "ELEMENT": "TEXT",
+                "LABEL": "Info"
+            }
         }
     ],
     "action": [
         {
             "step": "1.0",
-            "name": "NAVIGATE_TO_SCREEN",
+            "name": "CLICK",
             "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
             "values": {
-                "SCREEN_NAME": "obb.info"
+                "ELEMENT": "TEXT",
+                "LABEL": "Info"
             }
         }
     ],
@@ -61,10 +81,12 @@
     "postcondition": [
         {
             "step": "1.0",
-            "name": "NO_INTERACTION",
+            "name": "NAVIGATE_TO_SCREEN",
             "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
-            "values": {}
+            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
+            "values": {
+                "SCREEN_NAME": "obb.main"
+            }
         }
     ],
     "cluster": "CL_51, CL_52, CL_53, CL_43, CL_46, CL_48, CL_55",
