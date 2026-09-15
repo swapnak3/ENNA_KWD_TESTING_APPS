@@ -80,7 +80,7 @@
     ],
     "postcondition": [
         {
-            "step": "4.0",
+            "step": "1.0",
             "name": "NAVIGATE_TO_SCREEN",
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
