@@ -98,10 +98,12 @@
     "postcondition": [
         {
             "step": "1.0",
-            "name": "NO_INTERACTION",
+            "name": "CLICK",
             "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.actions.android_hmi.no_interaction.NoInteraction",
-            "values": {}
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "XPATH_NAME": "obb.BACK_BUTTON"
+            }
         }
     ],
     "cluster": "CL_51, CL_52, CL_53, CL_43, CL_46, CL_48, CL_55",
