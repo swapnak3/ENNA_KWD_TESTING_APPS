@@ -1,0 +1,205 @@
+{
+    "testcase_id": "61739149",
+    "anforderungs_id_version": 0,
+    "revision": 1,
+    "project": "CONNECT_APPS_HCP3",
+    "anforderungs_id": "not available",
+    "component": "LEGAL",
+    "testcase_name": "[LEGAL]ShowHideBlockingScreenWhileReversing",
+    "testcase_description": "This test case applies all previously validated Driver Distraction blocking behaviors to the scenario where the vehicle is operated in Reverse gear (R) instead of Drive (D). The test confirms three key safety behaviors: Blocking screen during high-speed reversing: When the vehicle accelerates above the distraction threshold (>10 km/h) while in Reverse, the Legal app must automatically display the Driver Distraction Blocking Screen, preventing the user from watching videos or accessing legal content while reversing at unsafe speeds. Hiding blocking screen when reversing stops: When the vehicle speed drops below the threshold or reaches zero while remaining in Reverse gear, the system must automatically hide the blocking screen and resume the video from the last paused state. Repeated acceleration/deceleration handling: The blocking screen must reappear every time reverse speed exceeds the threshold and must again hide when the speed is reduced, ensuring consistent distraction-safety behavior.",
+    "precondition": [
+        {
+            "step": "1.0",
+            "name": "SET_CLAMP_15",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClamp15",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_CLAMP_S",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SwitchClampS",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "SET_CURRENT_SYSTEM_LANGUAGE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.settings.SetSystemLanguage",
+            "values": {
+                "LANG": "en_GB"
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "SET_UP_MOBILE_DATA",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.privacy.SetMobileData",
+            "values": {
+                "STATE": "true"
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "PARKING",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        },
+        {
+            "step": "6.0",
+            "name": "START_ACA_EXPLANATORY_VIDEO",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.adb.general.SendAdbShellCommand",
+            "values": {
+                "COMMAND": "start_video_handsfree_driving"
+            }
+        },
+        {
+            "step": "7.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.video_player",
+                "TIMEOUT": 15.0
+            }
+        }
+    ],
+    "action": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "REVERSE",
+                "SPEED_IN_M_PER_S": 50.0
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "REVERSE",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        },
+        {
+            "step": "3.0",
+            "name": "WAIT_TIME_IN_MS",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs",
+            "values": {
+                "TIME": 2000
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "REVERSE",
+                "SPEED_IN_M_PER_S": 40.0
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "REVERSE",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        }
+    ],
+    "expectedresult": [
+        {
+            "step": "1.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.blocked",
+                "TIMEOUT": 5.0
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.video_player",
+                "TIMEOUT": 5.0
+            }
+        },
+        {
+            "step": "4.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.blocked",
+                "TIMEOUT": 5.0
+            }
+        },
+        {
+            "step": "5.0",
+            "name": "CHECK_SCREEN_IS_VISIBLE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.CheckScreenIsVisible",
+            "values": {
+                "SCREEN_NAME": "legal.video_player",
+                "TIMEOUT": 5.0
+            }
+        }
+    ],
+    "postcondition": [
+        {
+            "step": "1.0",
+            "name": "SET_DRIVE_MODE",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.vehicle.simulation.SetDriveMode",
+            "values": {
+                "GEAR": "PARKING",
+                "SPEED_IN_M_PER_S": 0.0
+            }
+        },
+        {
+            "step": "2.0",
+            "name": "CLICK",
+            "relation": "==",
+            "automation": "enna_kwd_testing.stimulations.apps.general.ClickOnElement",
+            "values": {
+                "ELEMENT": "BUTTON",
+                "XPATH_NAME": "legal.SETTINGS_BACK_BUTTON"
+            }
+        }
+    ],
+    "cluster": "CL_51, CL_53, CL_54, CL_43, CL_46, CL_48, CL_55",
+    "status": "Reviewed",
+    "testautomation": "automated",
+    "market": "Europe, China, North America, Japan, Korea, Rest of World, Taiwan, Hongkong",
+    "testlevel": "Level_1b_Accept",
+    "changeddate": "2026-09-21T00:00:00.000000Z",
+    "tags": "KWD_complete",
+    "testspec_sync_tool": "CODEBEAMER",
+    "editor_name": "unknown",
+    "status_requirement": "Reviewed",
+    "testmethode": "FT-use case Tests",
+    "testlocation": "Komponentenpr\u00fcfstand",
+    "solution_train": "1.1, 1.2"
+}
