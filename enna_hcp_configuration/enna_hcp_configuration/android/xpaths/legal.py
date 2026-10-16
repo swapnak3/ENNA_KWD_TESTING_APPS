@@ -53,3 +53,4 @@ SETTINGS_BUTTON = XpathString("//*[@resource-id='com.valtech_mobility.legal.audi
 OPEN_SOURCE_SOFTWARE_NOTICE_BUTTON = XpathString("//*[contains(@content-desc, 'com.valtech_mobility.legal.audi:string/legal_settings_screen__open_source_license__title')]")
 
 DATAPRIVACY_BUTTON = XpathString(f"//*{olb.logbook_settings_screen__data_protection_information__text}")
+GO_TO_TOP_BUTTON = XpathString("//*[contains(@content-desc,'LongTextDisclaimer-goToTopAction')]")
