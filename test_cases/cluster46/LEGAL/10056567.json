@@ -92,7 +92,7 @@
             "automation": "enna_kwd_testing.stimulations.apps.general.CheckElementIsVisible",
             "values": {
                 "ELEMENT": "BUTTON",
-                "XPATH_NAME": "legal.GO_TO_TOP"
+                "XPATH_NAME": "legal.GO_TO_TOP_BUTTON"
             }
         }
     ],
