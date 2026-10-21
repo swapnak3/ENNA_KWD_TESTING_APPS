@@ -41,33 +41,6 @@
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
             "values": {
-                "SCREEN_NAME": "obb.chapters"
-            }
-        },
-        {
-            "step": "5.0",
-            "name": "NAVIGATE_TO_SCREEN",
-            "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
-            "values": {
-                "SCREEN_NAME": "obb.chapters_setting_off"
-            }
-        },
-        {
-            "step": "6.0",
-            "name": "NAVIGATE_TO_SCREEN",
-            "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
-            "values": {
-                "SCREEN_NAME": "obb.chapters_sitting_correctly_and_safely"
-            }
-        },
-        {
-            "step": "7.0",
-            "name": "NAVIGATE_TO_SCREEN",
-            "relation": "==",
-            "automation": "enna_kwd_testing.stimulations.apps.general.NavigateToScreen",
-            "values": {
                 "SCREEN_NAME": "obb.chapters_front_seats"
             }
         }
