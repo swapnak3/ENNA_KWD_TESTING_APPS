@@ -50,7 +50,7 @@
             "relation": "==",
             "automation": "enna_kwd_testing.stimulations.actions.basic.times.WaitTimeInMs",
             "values": {
-                "TIME": 3000
+                "TIME": 4000
             }
         }
     ],
