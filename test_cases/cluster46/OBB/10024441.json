@@ -79,6 +79,7 @@
         }
     ],
     "postcondition": [
+
         {
             "step": "1.0",
             "name": "SET_DRIVE_MODE",
